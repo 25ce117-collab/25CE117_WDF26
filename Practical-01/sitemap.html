@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudentHub - Interactive Visual Sitemap (Practical 1)</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --purple: #8b5cf6;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
+        body { background: var(--bg); color: var(--text-main); padding: 40px 20px; line-height: 1.6; }
+        .header { text-align: center; max-width: 900px; margin: 0 auto 40px; }
+        .header h1 { font-size: 2.2rem; color: #1e293b; margin-bottom: 8px; }
+        .header p { color: var(--text-muted); font-size: 1.1rem; }
+        .badge { display: inline-block; padding: 4px 12px; background: #dbeafe; color: var(--primary); border-radius: 999px; font-weight: 600; font-size: 0.85rem; margin-bottom: 12px; }
+
+        .sitemap-container { max-width: 1100px; margin: 0 auto; background: var(--card-bg); padding: 35px; border-radius: 16px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05), 0 8px 10px -6px rgba(0,0,0,0.01); border: 1px solid var(--border); }
+        
+        /* Tree Layout */
+        .tree-root { text-align: center; margin-bottom: 40px; position: relative; }
+        .node { display: inline-block; padding: 14px 28px; border-radius: 10px; font-weight: 600; text-decoration: none; transition: all 0.2s; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
+        .node-root { background: #1e293b; color: #ffffff; font-size: 1.3rem; border: 2px solid #0f172a; }
+        .node-branch { background: #f1f5f9; color: #334155; font-size: 1.05rem; border: 2px solid #cbd5e1; }
+        .node-leaf { background: #ffffff; color: #475569; font-size: 0.95rem; border: 1.5px solid var(--border); display: block; margin: 8px 0; text-align: left; padding: 10px 16px; border-radius: 8px; }
+        .node-leaf:hover { border-color: var(--primary); color: var(--primary); transform: translateX(4px); }
+        
+        .grid-branches { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; position: relative; }
+        .branch-card { background: #f8fafc; border-radius: 12px; padding: 20px; border: 1px solid #e2e8f0; }
+        .branch-title { font-size: 1.1rem; font-weight: 700; margin-bottom: 14px; padding-bottom: 8px; border-bottom: 2px solid #e2e8f0; display: flex; align-items: center; justify-content: space-between; }
+        .tag { font-size: 0.75rem; padding: 2px 8px; border-radius: 6px; font-weight: 600; text-transform: uppercase; }
+        .tag-public { background: #e0e7ff; color: #4338ca; }
+        .tag-auth { background: #fef3c7; color: #b45309; }
+        .tag-student { background: #dcfce7; color: #15803d; }
+        .tag-admin { background: #fae8ff; color: #86198f; }
+
+        .legend { margin-top: 40px; padding: 20px; background: #f1f5f9; border-radius: 10px; display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
+        .legend-item { display: flex; align-items: center; gap: 8px; font-size: 0.9rem; font-weight: 500; }
+        .dot { width: 12px; height: 12px; border-radius: 50%; }
+        .dot-public { background: #4338ca; }
+        .dot-auth { background: #b45309; }
+        .dot-student { background: #15803d; }
+        .dot-admin { background: #86198f; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <span class="badge">Practical 1: Information Architecture</span>
+        <h1>StudentHub Portal - Complete Visual Sitemap</h1>
+        <p>Comprehensive hierarchical navigation structure across all 10+ core pages and functional sub-modules.</p>
+    </div>
+
+    <div class="sitemap-container">
+        <!-- Root -->
+        <div class="tree-root">
+            <div class="node node-root">🌐 StudentHub Root (/)</div>
+        </div>
+
+        <!-- Branches -->
+        <div class="grid-branches">
+            <!-- Branch 1: Public Pages -->
+            <div class="branch-card">
+                <div class="branch-title">
+                    <span>1. Public Information</span>
+                    <span class="tag tag-public">Public</span>
+                </div>
+                <div class="node-leaf">🏠 <strong>index.html / index.php</strong> - Portal Landing Page</div>
+                <div class="node-leaf">ℹ️ <strong>about.html</strong> - About University & Mission</div>
+                <div class="node-leaf">❓ <strong>faq.html</strong> - Interactive Accordion FAQ</div>
+                <div class="node-leaf">✉️ <strong>contact.html</strong> - Inquiry Form & Support</div>
+                <div class="node-leaf">💬 <strong>feedback.html</strong> - Student Suggestions</div>
+            </div>
+
+            <!-- Branch 2: Authentication -->
+            <div class="branch-card">
+                <div class="branch-title">
+                    <span>2. Access Control</span>
+                    <span class="tag tag-auth">Auth</span>
+                </div>
+                <div class="node-leaf">📝 <strong>register.html</strong> - Sign Up with Regex & CAPTCHA</div>
+                <div class="node-leaf">🔐 <strong>login.html</strong> - Credentials & Remember-Me</div>
+                <div class="node-leaf">🔄 <strong>logout.php</strong> - Session Clearance & Redirect</div>
+                <div class="node-leaf">🛡️ <strong>auth_check.php</strong> - Session Guard Middleware</div>
+            </div>
+
+            <!-- Branch 3: Student Module -->
+            <div class="branch-card">
+                <div class="branch-title">
+                    <span>3. Student Services</span>
+                    <span class="tag tag-student">Role: Student</span>
+                </div>
+                <div class="node-leaf">📊 <strong>student_dashboard.php</strong> - Registered Events & Stats</div>
+                <div class="node-leaf">📅 <strong>events.php</strong> - Event Catalog & One-Click RSViP</div>
+                <div class="node-leaf">👤 <strong>profile.php</strong> - Personal Details & Password Edit</div>
+                <div class="node-leaf">👥 <strong>students.php</strong> - Student Directory & Collaboration</div>
+            </div>
+
+            <!-- Branch 4: Administrator Module -->
+            <div class="branch-card">
+                <div class="branch-title">
+                    <span>4. Administration</span>
+                    <span class="tag tag-admin">Role: Admin</span>
+                </div>
+                <div class="node-leaf">📈 <strong>admin_dashboard.php</strong> - KPI Metrics & Charts</div>
+                <div class="node-leaf">🛠️ <strong>admin_events.php</strong> - Event CRUD & Poster Upload</div>
+                <div class="node-leaf">👥 <strong>admin_users.php</strong> - User Toggle & Role Management</div>
+                <div class="node-leaf">📜 <strong>audit_logs.php</strong> - Security Audit Log Viewer</div>
+                <div class="node-leaf">⚡ <strong>/api/events.php</strong> - Asynchronous REST API</div>
+            </div>
+        </div>
+
+        <div class="legend">
+            <div class="legend-item"><span class="dot dot-public"></span> Publicly Accessible</div>
+            <div class="legend-item"><span class="dot dot-auth"></span> Authentication Gate</div>
+            <div class="legend-item"><span class="dot dot-student"></span> Protected Student Portal</div>
+            <div class="legend-item"><span class="dot dot-admin"></span> Protected Admin Console</div>
+        </div>
+    </div>
+</body>
+</html>
