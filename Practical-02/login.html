@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Secure Login - StudentHub Portal">
+    <title>StudentHub - User Login</title>
+    <link rel="stylesheet" href="css/semantic.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="site-header" role="banner">
+        <div class="header-container">
+            <a href="index.html" class="logo-title">🎓 StudentHub</a>
+            <nav aria-label="Main Navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                    <li><a href="admin.html">Admin</a></li>
+                    <li><a href="login.html" class="btn" style="padding: 0.3rem 0.8rem;" aria-current="page">Login</a></li>
+                    <li><a href="register.html" class="btn" style="padding: 0.3rem 0.8rem; background: #059669;">Register</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <nav aria-label="Breadcrumb">
+        <ol>
+            <li><a href="index.html">Home</a></li>
+            <li aria-current="page">Portal Login</li>
+        </ol>
+    </nav>
+
+    <main id="main-content" role="main">
+        <section class="card" style="max-width: 480px; margin: 2rem auto;" aria-labelledby="login-title">
+            <h1 id="login-title" style="text-align: center;">Sign In to StudentHub</h1>
+            <p style="text-align: center; color: var(--text-muted); margin-bottom: 1.5rem;">Access student services, dashboard, and event bookings.</p>
+
+            <form action="dashboard.html" method="post">
+                <div class="form-group">
+                    <label for="loginEmail">Email Address <span class="required-star">*</span></label>
+                    <input type="email" id="loginEmail" name="loginEmail" required placeholder="name@charusat.edu.in" autocomplete="username">
+                </div>
+
+                <div class="form-group">
+                    <label for="loginPassword">Password <span class="required-star">*</span></label>
+                    <input type="password" id="loginPassword" name="loginPassword" required autocomplete="current-password">
+                </div>
+
+                <div class="form-group" style="display: flex; justify-content: space-between; align-items: center;">
+                    <label style="font-weight: normal; display: flex; align-items: center; gap: 0.4rem; cursor: pointer; margin-bottom: 0;">
+                        <input type="checkbox" id="rememberMe" name="rememberMe">
+                        <span>Remember me (30 days)</span>
+                    </label>
+                    <a href="contact.html" style="font-size: 0.85rem; color: var(--primary);">Forgot password?</a>
+                </div>
+
+                <div style="margin-top: 1.5rem;">
+                    <button type="submit" class="btn" style="width: 100%;">Authenticate &amp; Enter</button>
+                </div>
+
+                <p style="text-align: center; margin-top: 1.2rem; font-size: 0.95rem;">
+                    Don't have an account? <a href="register.html" style="color: var(--primary); font-weight: 600;">Register now</a>
+                </p>
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>StudentHub</h3>
+                <p>Centralized student portal for the Faculty of Technology & Engineering, CHARUSAT.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="faq.html">Login FAQs</a></li>
+                    <li><a href="contact.html">Help Desk</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 CHARUSAT - ITUE203. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

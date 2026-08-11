@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact StudentHub Support and Campus Administration">
+    <title>StudentHub - Contact Us</title>
+    <link rel="stylesheet" href="css/semantic.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="site-header" role="banner">
+        <div class="header-container">
+            <a href="index.html" class="logo-title">🎓 StudentHub</a>
+            <nav aria-label="Main Navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contact.html" aria-current="page">Contact</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                    <li><a href="admin.html">Admin</a></li>
+                    <li><a href="login.html" class="btn" style="padding: 0.3rem 0.8rem;">Login</a></li>
+                    <li><a href="register.html" class="btn" style="padding: 0.3rem 0.8rem; background: #059669;">Register</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <nav aria-label="Breadcrumb">
+        <ol>
+            <li><a href="index.html">Home</a></li>
+            <li aria-current="page">Contact Support</li>
+        </ol>
+    </nav>
+
+    <main id="main-content" role="main">
+        <section class="card" aria-labelledby="contact-heading">
+            <h1 id="contact-heading">Contact StudentHub Support</h1>
+            <p style="color: var(--text-muted);">Have questions or require technical assistance with your portal account? Reach out to our team.</p>
+        </section>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem;">
+            <section class="card" aria-labelledby="inquiry-form-heading">
+                <h2 id="inquiry-form-heading">Send an Inquiry</h2>
+                <form action="contact.html" method="post">
+                    <div class="form-group">
+                        <label for="contactName">Your Name <span class="required-star">*</span></label>
+                        <input type="text" id="contactName" name="contactName" required placeholder="Full Name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contactEmail">Email Address <span class="required-star">*</span></label>
+                        <input type="email" id="contactEmail" name="contactEmail" required placeholder="name@charusat.edu.in">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Inquiry Subject <span class="required-star">*</span></label>
+                        <select id="subject" name="subject" required>
+                            <option value="">-- Choose Subject --</option>
+                            <option value="account">Account Access / Password Issue</option>
+                            <option value="events">Event Registration Assistance</option>
+                            <option value="bug">Bug Report / Technical Glitch</option>
+                            <option value="general">General Campus Inquiry</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Detailed Message <span class="required-star">*</span></label>
+                        <textarea id="message" name="message" rows="5" required placeholder="Describe your inquiry in detail..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn" style="width: 100%;">Transmit Inquiry</button>
+                </form>
+            </section>
+
+            <section class="card" aria-labelledby="campus-info-heading">
+                <h2 id="campus-info-heading">Campus Contact Information</h2>
+                <address style="font-style: normal; line-height: 1.8; margin-top: 1rem;">
+                    <p><strong>CHARUSAT Campus</strong></p>
+                    <p>Faculty of Technology &amp; Engineering (FTE)</p>
+                    <p>Charotar University of Science and Technology</p>
+                    <p>139, Changa, Dist. Anand - 388421, Gujarat, India</p>
+                    <p style="margin-top: 1rem;"><strong>Email:</strong> <a href="mailto:studenthub@charusat.edu.in" style="color: var(--primary);">studenthub@charusat.edu.in</a></p>
+                    <p><strong>Helpline:</strong> +91 (02697) 265011 / 265021</p>
+                    <p><strong>Hours:</strong> Monday – Saturday: 9:00 AM – 4:30 PM</p>
+                </address>
+
+                <div class="card" style="margin-top: 1.5rem; background: #f8fafc; border: 1px solid var(--border);">
+                    <h3>Fast Answers</h3>
+                    <p style="font-size: 0.95rem; margin-top: 0.4rem;">Before submitting a ticket, check our comprehensive <a href="faq.html" style="color: var(--primary); font-weight: 600;">FAQ section</a> for instant solutions to frequent inquiries.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>StudentHub</h3>
+                <p>Centralized student portal for the Faculty of Technology & Engineering, CHARUSAT.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 CHARUSAT - ITUE203. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

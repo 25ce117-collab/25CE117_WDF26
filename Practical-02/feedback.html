@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Submit StudentHub Feedback & Experience Rating">
+    <title>StudentHub - Feedback &amp; Suggestions</title>
+    <link rel="stylesheet" href="css/semantic.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="site-header" role="banner">
+        <div class="header-container">
+            <a href="index.html" class="logo-title">🎓 StudentHub</a>
+            <nav aria-label="Main Navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="feedback.html" aria-current="page">Feedback</a></li>
+                    <li><a href="admin.html">Admin</a></li>
+                    <li><a href="login.html" class="btn" style="padding: 0.3rem 0.8rem;">Login</a></li>
+                    <li><a href="register.html" class="btn" style="padding: 0.3rem 0.8rem; background: #059669;">Register</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <nav aria-label="Breadcrumb">
+        <ol>
+            <li><a href="index.html">Home</a></li>
+            <li aria-current="page">Portal Feedback</li>
+        </ol>
+    </nav>
+
+    <main id="main-content" role="main">
+        <section class="card" style="max-width: 650px; margin: 0 auto;" aria-labelledby="fb-title">
+            <h1 id="fb-title">Student Experience Feedback</h1>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Help us elevate the StudentHub experience by sharing your suggestions and rating our services.</p>
+
+            <form action="feedback.html" method="post">
+                <div class="form-group">
+                    <label for="studentName">Student Name (Optional)</label>
+                    <input type="text" id="studentName" name="studentName" placeholder="Leave blank to remain anonymous">
+                </div>
+
+                <div class="form-group">
+                    <label for="moduleEvaluated">Module Evaluated <span class="required-star">*</span></label>
+                    <select id="moduleEvaluated" name="moduleEvaluated" required>
+                        <option value="">-- Choose Module --</option>
+                        <option value="events">Event Discovery &amp; Bookings</option>
+                        <option value="navigation">Navigation &amp; UI Usability</option>
+                        <option value="accessibility">Accessibility &amp; Screen Reader Support</option>
+                        <option value="auth">Account Registration &amp; Security</option>
+                        <option value="overall">Overall Campus Portal Experience</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Overall Experience Rating <span class="required-star">*</span></label>
+                    <div style="display: flex; gap: 1.5rem; margin-top: 0.4rem; flex-wrap: wrap;">
+                        <label style="font-weight: normal; cursor: pointer;"><input type="radio" name="rating" value="5" required> ⭐⭐⭐⭐⭐ (Excellent)</label>
+                        <label style="font-weight: normal; cursor: pointer;"><input type="radio" name="rating" value="4"> ⭐⭐⭐⭐ (Good)</label>
+                        <label style="font-weight: normal; cursor: pointer;"><input type="radio" name="rating" value="3"> ⭐⭐⭐ (Average)</label>
+                        <label style="font-weight: normal; cursor: pointer;"><input type="radio" name="rating" value="2"> ⭐⭐ (Needs Work)</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="suggestions">Your Comments &amp; Suggestions <span class="required-star">*</span></label>
+                    <textarea id="suggestions" name="suggestions" rows="5" required placeholder="Tell us what you liked or how we can improve..."></textarea>
+                </div>
+
+                <button type="submit" class="btn" style="width: 100%;">Submit Feedback</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>StudentHub</h3>
+                <p>Centralized student portal for the Faculty of Technology & Engineering, CHARUSAT.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="contact.html">Contact Support</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 CHARUSAT - ITUE203. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Student Registration - StudentHub Portal">
+    <title>StudentHub - Register Account</title>
+    <link rel="stylesheet" href="css/semantic.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="site-header" role="banner">
+        <div class="header-container">
+            <a href="index.html" class="logo-title">🎓 StudentHub</a>
+            <nav aria-label="Main Navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                    <li><a href="admin.html">Admin</a></li>
+                    <li><a href="login.html" class="btn" style="padding: 0.3rem 0.8rem;">Login</a></li>
+                    <li><a href="register.html" class="btn" style="padding: 0.3rem 0.8rem; background: #059669;" aria-current="page">Register</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <nav aria-label="Breadcrumb">
+        <ol>
+            <li><a href="index.html">Home</a></li>
+            <li aria-current="page">Student Registration</li>
+        </ol>
+    </nav>
+
+    <main id="main-content" role="main">
+        <section class="card" style="max-width: 700px; margin: 0 auto;" aria-labelledby="reg-title">
+            <h1 id="reg-title">Create Student Account</h1>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Join the StudentHub community to register for events and manage campus activities.</p>
+
+            <form action="dashboard.html" method="post" novalidate>
+                <div class="form-group">
+                    <label for="fullName">Full Name <span class="required-star">*</span></label>
+                    <input type="text" id="fullName" name="fullName" required placeholder="e.g. Satyajit Parmar" aria-required="true" autocomplete="name">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Institutional Email <span class="required-star">*</span></label>
+                    <input type="email" id="email" name="email" required placeholder="e.g. 23it001@charusat.edu.in" aria-required="true" autocomplete="email">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Mobile Number <span class="required-star">*</span></label>
+                    <input type="tel" id="phone" name="phone" required placeholder="10-digit mobile number" aria-required="true" autocomplete="tel">
+                </div>
+
+                <div class="form-group">
+                    <label for="department">Department / Course <span class="required-star">*</span></label>
+                    <select id="department" name="department" required aria-required="true">
+                        <option value="">-- Select Department --</option>
+                        <option value="IT">Information Technology (CSPIT)</option>
+                        <option value="CE">Computer Engineering (CSPIT)</option>
+                        <option value="CSE">Computer Science & Engineering (DEPSTAR)</option>
+                        <option value="EC">Electronics & Communication</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password <span class="required-star">*</span></label>
+                    <input type="password" id="password" name="password" required aria-required="true" autocomplete="new-password">
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password <span class="required-star">*</span></label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required aria-required="true" autocomplete="new-password">
+                </div>
+
+                <div class="form-group" style="margin-top: 1rem;">
+                    <label style="font-weight: normal; display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                        <input type="checkbox" id="terms" name="terms" required aria-required="true">
+                        <span>I agree to the <a href="about.html">Terms of Service</a> and privacy policies.</span>
+                    </label>
+                </div>
+
+                <div style="margin-top: 1.5rem;">
+                    <button type="submit" class="btn" style="width: 100%;">Complete Registration</button>
+                </div>
+
+                <p style="text-align: center; margin-top: 1rem; font-size: 0.95rem;">
+                    Already registered? <a href="login.html" style="color: var(--primary); font-weight: 600;">Sign In here</a>
+                </p>
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>StudentHub</h3>
+                <p>Centralized student portal for the Faculty of Technology & Engineering, CHARUSAT.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 CHARUSAT - ITUE203. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

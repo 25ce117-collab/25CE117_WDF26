@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Frequently Asked Questions - StudentHub Portal">
+    <title>StudentHub - Frequently Asked Questions (FAQ)</title>
+    <link rel="stylesheet" href="css/semantic.css">
+    <style>
+        details {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1rem 1.2rem;
+            margin-bottom: 1rem;
+            transition: all 0.2s ease;
+        }
+        details[open] {
+            border-color: var(--primary);
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+        }
+        summary {
+            font-weight: 700;
+            font-size: 1.05rem;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        summary::-webkit-details-marker { display: none; }
+        summary::after {
+            content: "➕";
+            font-size: 0.9rem;
+            color: var(--primary);
+        }
+        details[open] summary::after {
+            content: "➖";
+        }
+        details p {
+            margin-top: 0.8rem;
+            color: #334155;
+            line-height: 1.7;
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="site-header" role="banner">
+        <div class="header-container">
+            <a href="index.html" class="logo-title">🎓 StudentHub</a>
+            <nav aria-label="Main Navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="faq.html" aria-current="page">FAQ</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                    <li><a href="admin.html">Admin</a></li>
+                    <li><a href="login.html" class="btn" style="padding: 0.3rem 0.8rem;">Login</a></li>
+                    <li><a href="register.html" class="btn" style="padding: 0.3rem 0.8rem; background: #059669;">Register</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <nav aria-label="Breadcrumb">
+        <ol>
+            <li><a href="index.html">Home</a></li>
+            <li aria-current="page">FAQ Knowledge Base</li>
+        </ol>
+    </nav>
+
+    <main id="main-content" role="main">
+        <section class="card" aria-labelledby="faq-page-heading">
+            <h1 id="faq-page-heading">Frequently Asked Questions (FAQ)</h1>
+            <p style="color: var(--text-muted);">Find answers regarding account registration, event bookings, accessibility features, and student services.</p>
+        </section>
+
+        <section aria-labelledby="account-faq-heading" style="margin-top: 1.5rem;">
+            <h2 id="account-faq-heading" style="margin-bottom: 1rem;">1. Account &amp; Access Queries</h2>
+
+            <details>
+                <summary>How do I register for an account on StudentHub?</summary>
+                <p>Navigate to the <a href="register.html">Registration Page</a>, supply your legal full name, verified CHARUSAT student email address (e.g. <code>23it001@charusat.edu.in</code>), 10-digit mobile number, select your department, and create a strong password conforming to university security policies.</p>
+            </details>
+
+            <details>
+                <summary>What should I do if I forget my password?</summary>
+                <p>Visit the <a href="login.html">Login Page</a> and select the "Forgot Password" link. Alternatively, submit a support ticket via the <a href="contact.html">Contact Support Form</a> with your university roll number and identity verification.</p>
+            </details>
+
+            <details>
+                <summary>How does the "Remember Me" session security token work?</summary>
+                <p>When selected, StudentHub issues a cryptographically random, 64-character token stored in an HTTP-only cookie. Its cryptographic SHA-256 hash is verified against the database upon your next visit, extending access securely for 30 days without exposing plaintext tokens.</p>
+            </details>
+        </section>
+
+        <section aria-labelledby="events-faq-heading" style="margin-top: 2rem;">
+            <h2 id="events-faq-heading" style="margin-bottom: 1rem;">2. Events &amp; Registration Queries</h2>
+
+            <details>
+                <summary>How do I secure a seat for workshops or hackathons?</summary>
+                <p>Go to the <a href="events.html">Events Catalog</a>, locate your desired event, and click "Register Seat". If seats are available, your reservation will immediately reflect in your <a href="dashboard.html">Student Dashboard</a>.</p>
+            </details>
+
+            <details>
+                <summary>Can I cancel an event booking if my schedule conflicts?</summary>
+                <p>Yes. In your Student Dashboard, expand your active registrations table and choose "Cancel Registration" at least 24 hours prior to event commencement to release the seat for waitlisted peers.</p>
+            </details>
+
+            <details>
+                <summary>Where can I download my participation certificates?</summary>
+                <p>Certificates are issued electronically after attendance is verified by event organizers. You can download digitally signed PDF certificates directly from your <a href="profile.html">Student Profile</a>.</p>
+            </details>
+        </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>StudentHub</h3>
+                <p>Centralized student portal for the Faculty of Technology & Engineering, CHARUSAT.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="contact.html">Help Desk</a></li>
+                    <li><a href="about.html">About StudentHub</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 CHARUSAT - ITUE203. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

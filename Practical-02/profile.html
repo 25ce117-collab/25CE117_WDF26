@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Manage your StudentHub account profile and preferences">
+    <title>StudentHub - Student Profile</title>
+    <link rel="stylesheet" href="css/semantic.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="site-header" role="banner">
+        <div class="header-container">
+            <a href="index.html" class="logo-title">🎓 StudentHub</a>
+            <nav aria-label="Main Navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="profile.html" aria-current="page">Profile</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                    <li><a href="admin.html">Admin</a></li>
+                    <li><a href="index.html" class="btn" style="padding: 0.3rem 0.8rem; background: #dc2626;">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <nav aria-label="Breadcrumb">
+        <ol>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li aria-current="page">My Profile</li>
+        </ol>
+    </nav>
+
+    <main id="main-content" role="main">
+        <section class="card" style="max-width: 750px; margin: 0 auto;" aria-labelledby="profile-heading">
+            <h1 id="profile-heading">Student Profile Details</h1>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Update your academic contact information and account security settings.</p>
+
+            <form action="profile.html" method="post">
+                <div class="card" style="background: #f8fafc; border: 1px dashed var(--border); margin-bottom: 1.5rem;">
+                    <h3>Student Identification</h3>
+                    <p style="margin-top: 0.5rem;"><strong>University Student ID:</strong> 23IT042</p>
+                    <p><strong>Department:</strong> Department of Information Technology (CSPIT)</p>
+                    <p><strong>Enrolled Semester:</strong> Semester 3 (Odd 2026-27)</p>
+                </div>
+
+                <div class="form-group">
+                    <label for="fullName">Full Legal Name</label>
+                    <input type="text" id="fullName" name="fullName" value="Satyajit Parmar" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Institutional Email</label>
+                    <input type="email" id="email" name="email" value="23it042@charusat.edu.in" readonly style="background: #e2e8f0; cursor: not-allowed;">
+                    <small style="color: var(--text-muted);">Institutional email addresses are managed centrally and cannot be edited.</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Contact Mobile Number</label>
+                    <input type="tel" id="phone" name="phone" value="+91 9876543210" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="bio">Personal / Project Bio</label>
+                    <textarea id="bio" name="bio" rows="4">Aspiring full-stack web developer and cloud computing enthusiast. Active member of CHARUSAT Developer Student Club.</textarea>
+                </div>
+
+                <div style="margin-top: 1.5rem; display: flex; gap: 1rem;">
+                    <button type="submit" class="btn">Save Profile Changes</button>
+                    <a href="dashboard.html" class="btn" style="background: #64748b;">Cancel</a>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>StudentHub</h3>
+                <p>Centralized student portal for the Faculty of Technology & Engineering, CHARUSAT.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="contact.html">Support</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 CHARUSAT - ITUE203. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

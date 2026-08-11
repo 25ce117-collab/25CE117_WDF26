@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Student Personal Dashboard - StudentHub">
+    <title>StudentHub - Student Dashboard</title>
+    <link rel="stylesheet" href="css/semantic.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="site-header" role="banner">
+        <div class="header-container">
+            <a href="index.html" class="logo-title">🎓 StudentHub</a>
+            <nav aria-label="Main Navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="dashboard.html" aria-current="page">Dashboard</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="faq.html">FAQ</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                    <li><a href="admin.html">Admin</a></li>
+                    <li><a href="index.html" class="btn" style="padding: 0.3rem 0.8rem; background: #dc2626;">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <nav aria-label="Breadcrumb">
+        <ol>
+            <li><a href="index.html">Home</a></li>
+            <li aria-current="page">Student Dashboard</li>
+        </ol>
+    </nav>
+
+    <main id="main-content" role="main">
+        <section class="card" aria-labelledby="welcome-heading">
+            <h1 id="welcome-heading">Welcome back, Satyajit Parmar!</h1>
+            <p style="color: var(--text-muted);">Enrolled in B.Tech Information Technology (Semester 3, 2026-27 Odd) | Roll No: <strong>23IT042</strong></p>
+        </section>
+
+        <!-- KPI Metric Cards -->
+        <section aria-label="Personal Statistics">
+            <div class="card-grid">
+                <article class="card">
+                    <span style="font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600;">Registered Events</span>
+                    <p style="font-size: 2.2rem; font-weight: 700; color: var(--primary); margin: 0.4rem 0;">4 Active</p>
+                    <a href="events.html" style="font-size: 0.9rem; color: var(--accent);">Browse more events &rarr;</a>
+                </article>
+
+                <article class="card">
+                    <span style="font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600;">Attendance Rate</span>
+                    <p style="font-size: 2.2rem; font-weight: 700; color: var(--success); margin: 0.4rem 0;">96.5%</p>
+                    <span style="font-size: 0.9rem; color: var(--text-muted);">Exemplary record</span>
+                </article>
+
+                <article class="card">
+                    <span style="font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600;">Certificates Earned</span>
+                    <p style="font-size: 2.2rem; font-weight: 700; color: #7c3aed; margin: 0.4rem 0;">3 Issued</p>
+                    <a href="profile.html" style="font-size: 0.9rem; color: var(--accent);">Download certificates &rarr;</a>
+                </article>
+            </div>
+        </section>
+
+        <!-- Registered Events Section -->
+        <section class="card" style="margin-top: 2rem;" aria-labelledby="registered-events-heading">
+            <h2 id="registered-events-heading">My Active Event Registrations</h2>
+            <div style="overflow-x: auto; margin-top: 1rem;">
+                <table style="width: 100%; border-collapse: collapse; text-align: left;">
+                    <thead>
+                        <tr style="border-bottom: 2px solid var(--border); background: #f8fafc;">
+                            <th style="padding: 10px;">Event Name</th>
+                            <th style="padding: 10px;">Category</th>
+                            <th style="padding: 10px;">Date &amp; Time</th>
+                            <th style="padding: 10px;">Venue</th>
+                            <th style="padding: 10px;">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid var(--border);">
+                            <td style="padding: 12px 10px; font-weight: 600;">Charusat HackFest 2026</td>
+                            <td style="padding: 12px 10px;"><span style="background: #dbeafe; color: #1e40af; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem;">Hackathon</span></td>
+                            <td style="padding: 12px 10px;">Nov 14, 2026 (09:00 AM)</td>
+                            <td style="padding: 12px 10px;">CSPIT Lab 3</td>
+                            <td style="padding: 12px 10px; color: var(--success); font-weight: 600;">Confirmed</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--border);">
+                            <td style="padding: 12px 10px; font-weight: 600;">Web Frameworks BootCamp</td>
+                            <td style="padding: 12px 10px;"><span style="background: #dcfce7; color: #166534; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem;">Workshop</span></td>
+                            <td style="padding: 12px 10px;">Nov 20, 2026 (02:00 PM)</td>
+                            <td style="padding: 12px 10px;">Seminar Hall A</td>
+                            <td style="padding: 12px 10px; color: var(--success); font-weight: 600;">Confirmed</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>StudentHub</h3>
+                <p>Centralized student portal for the Faculty of Technology & Engineering, CHARUSAT.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 CHARUSAT - ITUE203. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Administrator Management Console - StudentHub Portal">
+    <title>StudentHub - Admin Management Console</title>
+    <link rel="stylesheet" href="css/semantic.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <header class="site-header" role="banner" style="background: #0f172a; border-bottom: 3px solid #3b82f6;">
+        <div class="header-container">
+            <a href="admin.html" class="logo-title" style="color: #ffffff;">🛡️ StudentHub Admin</a>
+            <nav aria-label="Main Navigation">
+                <ul>
+                    <li><a href="index.html" style="color: #cbd5e1;">Portal Home</a></li>
+                    <li><a href="dashboard.html" style="color: #cbd5e1;">Student View</a></li>
+                    <li><a href="admin.html" aria-current="page" style="color: #60a5fa; font-weight: bold;">Admin Console</a></li>
+                    <li><a href="index.html" class="btn" style="padding: 0.3rem 0.8rem; background: #dc2626;">Sign Out</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <nav aria-label="Breadcrumb">
+        <ol>
+            <li><a href="index.html">Home</a></li>
+            <li aria-current="page">Admin Console</li>
+        </ol>
+    </nav>
+
+    <main id="main-content" role="main">
+        <section class="card" aria-labelledby="admin-title">
+            <h1 id="admin-title">Campus Administrator Console</h1>
+            <p style="color: var(--text-muted);">Manage registered students, schedule university events, review audit trails, and oversee system health.</p>
+        </section>
+
+        <!-- System KPI Summary -->
+        <section aria-label="System Metrics">
+            <div class="card-grid">
+                <article class="card">
+                    <span style="font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600;">Total Enrolled Students</span>
+                    <p style="font-size: 2.2rem; font-weight: 700; color: var(--primary); margin: 0.4rem 0;">1,420</p>
+                    <span style="font-size: 0.85rem; color: var(--success);">↑ 12% from last term</span>
+                </article>
+
+                <article class="card">
+                    <span style="font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600;">Scheduled Campus Events</span>
+                    <p style="font-size: 2.2rem; font-weight: 700; color: #0284c7; margin: 0.4rem 0;">18 Active</p>
+                    <span style="font-size: 0.85rem; color: var(--text-muted);">4 closing this week</span>
+                </article>
+
+                <article class="card">
+                    <span style="font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600;">Total Registrations</span>
+                    <p style="font-size: 2.2rem; font-weight: 700; color: #16a34a; margin: 0.4rem 0;">4,185</p>
+                    <span style="font-size: 0.85rem; color: var(--text-muted);">Capacity utilization 88%</span>
+                </article>
+
+                <article class="card">
+                    <span style="font-size: 0.85rem; color: var(--text-muted); text-transform: uppercase; font-weight: 600;">System Security Status</span>
+                    <p style="font-size: 2.2rem; font-weight: 700; color: #15803d; margin: 0.4rem 0;">Optimal</p>
+                    <span style="font-size: 0.85rem; color: var(--text-muted);">All audit checks passed</span>
+                </article>
+            </div>
+        </section>
+
+        <!-- Administration Modules -->
+        <section class="card" style="margin-top: 2rem;" aria-labelledby="quick-admin-actions">
+            <h2 id="quick-admin-actions">Administrative Modules &amp; Actions</h2>
+            <div class="card-grid">
+                <article class="card" style="border-top: 4px solid var(--primary);">
+                    <h3>Student Management</h3>
+                    <p>Add, inspect, update, or soft-delete student records across engineering departments.</p>
+                    <div style="margin-top: 1rem;"><a href="dashboard.html" class="btn" style="padding: 0.4rem 1rem;">Open Student CRUD</a></div>
+                </article>
+
+                <article class="card" style="border-top: 4px solid #0284c7;">
+                    <h3>Event Scheduler</h3>
+                    <p>Publish workshops and hackathons, upload promotional posters, and configure participant limits.</p>
+                    <div style="margin-top: 1rem;"><a href="events.html" class="btn" style="padding: 0.4rem 1rem;">Manage Events</a></div>
+                </article>
+
+                <article class="card" style="border-top: 4px solid #16a34a;">
+                    <h3>Security Audit Logs</h3>
+                    <p>Review comprehensive chronological logs of logins, profile modifications, and admin actions.</p>
+                    <div style="margin-top: 1rem;"><a href="admin.html" class="btn" style="padding: 0.4rem 1rem; background: #334155;">View Audit Trail</a></div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-container">
+            <div class="footer-col">
+                <h3>StudentHub Administration</h3>
+                <p>Protected area restricted to faculty advisors and authorized system administrators.</p>
+            </div>
+            <div class="footer-col">
+                <h3>Admin Policy</h3>
+                <p>All administrative operations are permanently logged to the database audit registry.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 CHARUSAT - ITUE203. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
