@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Responsive Contact Page - Practical 3 Intermediate Extension">
+    <title>StudentHub - Responsive Contact Support</title>
+    <link rel="stylesheet" href="css/responsive.css">
+    <style>
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+        @media (min-width: 900px) {
+            .contact-grid {
+                grid-template-columns: 1.2fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="nav-container">
+            <a href="index.html" class="brand-logo">🎓 StudentHub</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="contact.html" class="active">Contact</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                </ul>
+            </nav>
+            <div class="nav-auth">
+                <a href="register.html" class="btn btn-primary">Sign Up</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="breadcrumb-trail">
+            <a href="index.html">Home</a> <span>›</span> <strong>Responsive Contact</strong>
+        </div>
+
+        <section class="card" style="margin-bottom: 2rem;">
+            <h1>Connect with Campus Services</h1>
+            <p style="color: var(--text-secondary); margin-top: 0.5rem;">Multi-column responsive contact layout utilizing CSS Grid to balance form input fields and contact information.</p>
+        </section>
+
+        <div class="contact-grid">
+            <!-- Form Card -->
+            <section class="card">
+                <h2 style="margin-bottom: 1rem;">Direct Inquiry Form</h2>
+                <form action="contact.html" method="post">
+                    <div class="form-grid-2">
+                        <div class="form-group">
+                            <label for="cName">Your Name</label>
+                            <input type="text" id="cName" class="form-control" required placeholder="Full Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="cEmail">Email Address</label>
+                            <input type="email" id="cEmail" class="form-control" required placeholder="user@charusat.edu.in">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cSubject">Inquiry Category</label>
+                        <select id="cSubject" class="form-control" required>
+                            <option value="">Select Category...</option>
+                            <option value="technical">Technical Support</option>
+                            <option value="events">Event Logistics</option>
+                            <option value="academic">Academic Inquiries</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cMsg">Message</label>
+                        <textarea id="cMsg" class="form-control" rows="5" required placeholder="Enter message..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block">Transmit Message</button>
+                </form>
+            </section>
+
+            <!-- Info Card -->
+            <section class="card" style="background: #f8fafc;">
+                <h2 style="margin-bottom: 1rem;">Campus Secretariat</h2>
+                <address style="font-style: normal; line-height: 1.8; color: var(--text-secondary);">
+                    <p><strong>CHARUSAT Campus</strong></p>
+                    <p>Faculty of Technology &amp; Engineering</p>
+                    <p>139, Changa - 388421, Anand, Gujarat, India</p>
+                    <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 1rem 0;">
+                    <p>📞 <strong>Phone:</strong> +91 (02697) 265011</p>
+                    <p>✉️ <strong>Email:</strong> helpdesk@charusat.edu.in</p>
+                    <p>🕒 <strong>Hours:</strong> Mon - Sat: 9:00 AM - 4:30 PM</p>
+                </address>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-bottom">
+            <p>&copy; 2026 CHARUSAT FTE - Responsive Contact Practical 3</p>
+        </div>
+    </footer>
+</body>
+</html>

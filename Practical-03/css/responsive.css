@@ -1,0 +1,323 @@
+/* Practical 3: Responsive UI Design using CSS Grid and Flexbox */
+/* Mobile-First CSS Architecture */
+
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --primary-light: #eff6ff;
+    --secondary: #475569;
+    --accent: #f59e0b;
+    --success: #10b981;
+    --danger: #ef4444;
+    --bg-main: #f8fafc;
+    --bg-card: #ffffff;
+    --text-primary: #0f172a;
+    --text-secondary: #64748b;
+    --border-color: #e2e8f0;
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+    --transition-fast: 0.2s ease;
+}
+
+/* Reset & Box Sizing */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ==========================================================================
+   FLEXBOX NAVIGATION (1D Alignment)
+   ========================================================================== */
+.site-header {
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: var(--shadow-sm);
+}
+
+.nav-container {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 1rem 1.25rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: var(--primary);
+    text-decoration: none;
+    letter-spacing: -0.5px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 0.85rem;
+    border-radius: var(--radius-sm);
+    transition: all var(--transition-fast);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--primary);
+    background-color: var(--primary-light);
+}
+
+.nav-auth {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* ==========================================================================
+   BUTTONS & UI CONTROLS
+   ========================================================================== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0.6rem 1.25rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: all var(--transition-fast);
+}
+.btn-primary { background: var(--primary); color: #fff; }
+.btn-primary:hover { background: var(--primary-dark); }
+.btn-outline { background: transparent; border: 1.5px solid var(--border-color); color: var(--text-primary); }
+.btn-outline:hover { background: var(--border-color); }
+.btn-success { background: var(--success); color: #fff; }
+.btn-danger { background: var(--danger); color: #fff; }
+.btn-block { width: 100%; }
+
+/* ==========================================================================
+   RESPONSIVE CONTAINER & PAGE SHELL
+   ========================================================================== */
+.main-content {
+    flex: 1;
+    max-width: 1240px;
+    width: 100%;
+    margin: 1.5rem auto;
+    padding: 0 1.25rem;
+}
+
+/* Breadcrumb Navigation */
+.breadcrumb-trail {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.25rem;
+}
+.breadcrumb-trail a { color: var(--primary); text-decoration: none; }
+.breadcrumb-trail span { color: var(--text-secondary); }
+
+/* ==========================================================================
+   CSS GRID LAYOUTS (2D Multidimensional Grids)
+   ========================================================================== */
+
+/* 1. Hero Section (Flexbox / Grid Mobile-First) */
+.hero-card {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    color: #fff;
+    padding: 2.5rem 1.5rem;
+    border-radius: var(--radius-lg);
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+    box-shadow: var(--shadow-lg);
+}
+.hero-card h1 { font-size: 2.2rem; font-weight: 800; line-height: 1.2; }
+.hero-card p { font-size: 1.1rem; color: #94a3b8; max-width: 650px; }
+
+/* 2. Responsive 3-Column Card Grid */
+.grid-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+/* 3. Dashboard Grid (Sidebar + Main View) */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+/* 4. Form Layout Grid (Multi-column inputs) */
+.form-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+/* 5. Metrics Stat Grid */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Card Component */
+.card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.stat-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+.stat-card .stat-label { font-size: 0.85rem; font-weight: 600; color: var(--text-secondary); text-transform: uppercase; }
+.stat-card .stat-value { font-size: 2rem; font-weight: 800; color: var(--primary); }
+
+/* Form Controls */
+.form-group {
+    margin-bottom: 1.25rem;
+}
+.form-group label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+    color: var(--text-primary);
+}
+.form-control {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1.5px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    font-size: 0.95rem;
+    background: #fff;
+    color: var(--text-primary);
+    transition: border-color var(--transition-fast);
+}
+.form-control:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* Footer Grid */
+.site-footer {
+    background: #0f172a;
+    color: #94a3b8;
+    padding: 3rem 1.25rem 1.5rem;
+    margin-top: 3rem;
+}
+.footer-grid {
+    max-width: 1240px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #1e293b;
+}
+.footer-col h4 { color: #fff; font-size: 1.1rem; margin-bottom: 0.75rem; }
+.footer-col ul { list-style: none; }
+.footer-col a { color: #94a3b8; text-decoration: none; display: block; margin-bottom: 0.5rem; font-size: 0.9rem; }
+.footer-col a:hover { color: #fff; }
+.footer-bottom {
+    max-width: 1240px;
+    margin: 1.5rem auto 0;
+    text-align: center;
+    font-size: 0.85rem;
+}
+
+/* ==========================================================================
+   MEDIA QUERIES (Mobile-First Breakpoint System)
+   ========================================================================== */
+
+/* Tablet Breakpoint (>= 640px / 576px) */
+@media (min-width: 640px) {
+    .grid-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .form-grid-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .hero-card {
+        padding: 3.5rem 2.5rem;
+    }
+    .hero-card h1 {
+        font-size: 2.8rem;
+    }
+}
+
+/* Desktop Breakpoint (>= 1024px / 992px) */
+@media (min-width: 1024px) {
+    .grid-cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .dashboard-grid {
+        grid-template-columns: 260px 1fr;
+        align-items: start;
+    }
+    .footer-grid {
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+    }
+    .contact-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem;
+    }
+}

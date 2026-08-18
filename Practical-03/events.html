@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Campus Events Catalog - Responsive CSS Grid Layout">
+    <title>StudentHub - Responsive Events Catalog</title>
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="nav-container">
+            <a href="index.html" class="brand-logo">🎓 StudentHub</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="events.html" class="active">Events</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="nav-auth">
+                <a href="register.html" class="btn btn-primary">Join Event</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="breadcrumb-trail">
+            <a href="index.html">Home</a> <span>›</span> <strong>Events Catalog</strong>
+        </div>
+
+        <section class="card" style="margin-bottom: 2rem;">
+            <h1>Campus Events Catalog</h1>
+            <p style="color: var(--text-secondary); margin-top: 0.5rem;">Explore our responsive grid card interface automatically adjusting between 1, 2, and 3 columns according to viewport size.</p>
+        </section>
+
+        <!-- Events Grid (1fr -> 2fr -> 3fr) -->
+        <div class="grid-cards">
+            <article class="card">
+                <span style="color: var(--primary); font-weight: 700; font-size: 0.8rem; text-transform: uppercase;">Hackathon</span>
+                <h2 style="font-size: 1.25rem; margin: 0.4rem 0;">Charusat HackFest 2026</h2>
+                <p style="color: var(--text-secondary); font-size: 0.95rem;">36-hour challenge focusing on sustainable AI and cloud applications.</p>
+                <p style="margin-top: 0.75rem; font-size: 0.9rem;">📍 CSPIT Lab 3 | 📅 Nov 14, 2026</p>
+                <div style="margin-top: 1rem;"><a href="register.html" class="btn btn-primary btn-block">Reserve Seat</a></div>
+            </article>
+
+            <article class="card">
+                <span style="color: var(--success); font-weight: 700; font-size: 0.8rem; text-transform: uppercase;">Workshop</span>
+                <h2 style="font-size: 1.25rem; margin: 0.4rem 0;">Full-Stack Web Architectures</h2>
+                <p style="color: var(--text-secondary); font-size: 0.95rem;">Master responsive layouts, PHP PDO backends, and asynchronous APIs.</p>
+                <p style="margin-top: 0.75rem; font-size: 0.9rem;">📍 Seminar Hall A | 📅 Nov 20, 2026</p>
+                <div style="margin-top: 1rem;"><a href="register.html" class="btn btn-primary btn-block">Reserve Seat</a></div>
+            </article>
+
+            <article class="card">
+                <span style="color: var(--accent); font-weight: 700; font-size: 0.8rem; text-transform: uppercase;">Symposium</span>
+                <h2 style="font-size: 1.25rem; margin: 0.4rem 0;">Next-Gen Neural Systems</h2>
+                <p style="color: var(--text-secondary); font-size: 0.95rem;">Expert keynote talks on transformer networks, agent frameworks, and safety.</p>
+                <p style="margin-top: 0.75rem; font-size: 0.9rem;">📍 Auditorium | 📅 Nov 28, 2026</p>
+                <div style="margin-top: 1rem;"><a href="register.html" class="btn btn-primary btn-block">Reserve Seat</a></div>
+            </article>
+
+            <article class="card">
+                <span style="color: #8b5cf6; font-weight: 700; font-size: 0.8rem; text-transform: uppercase;">Cultural Fest</span>
+                <h2 style="font-size: 1.25rem; margin: 0.4rem 0;">Spoural Cultural Auditions</h2>
+                <p style="color: var(--text-secondary); font-size: 0.95rem;">Showcase your talents in dramatic arts, classical music, and group dance.</p>
+                <p style="margin-top: 0.75rem; font-size: 0.9rem;">📍 Amphitheatre | 📅 Dec 02, 2026</p>
+                <div style="margin-top: 1rem;"><a href="register.html" class="btn btn-primary btn-block">Reserve Seat</a></div>
+            </article>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-bottom">
+            <p>&copy; 2026 CHARUSAT FTE - Responsive Catalog Practical 3</p>
+        </div>
+    </footer>
+</body>
+</html>

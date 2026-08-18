@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Student Registration - Multi-column responsive form">
+    <title>StudentHub - Responsive Registration Form</title>
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="nav-container">
+            <a href="index.html" class="brand-logo">🎓 StudentHub</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="nav-auth">
+                <a href="register.html" class="btn btn-primary">Register</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="breadcrumb-trail">
+            <a href="index.html">Home</a> <span>›</span> <strong>Responsive Registration</strong>
+        </div>
+
+        <section class="card" style="max-width: 760px; margin: 0 auto;">
+            <h1>Student Portal Registration</h1>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">The layout uses CSS Grid (1-column on mobile, 2-column on tablet &amp; desktop) for balanced form density.</p>
+
+            <form action="dashboard.html" method="get">
+                <div class="form-grid-2">
+                    <div class="form-group">
+                        <label for="regFirstName">First Name</label>
+                        <input type="text" id="regFirstName" class="form-control" placeholder="Satyajit" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="regLastName">Last Name</label>
+                        <input type="text" id="regLastName" class="form-control" placeholder="Parmar" required>
+                    </div>
+                </div>
+
+                <div class="form-grid-2">
+                    <div class="form-group">
+                        <label for="regEmail">University Email</label>
+                        <input type="email" id="regEmail" class="form-control" placeholder="23it042@charusat.edu.in" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="regPhone">Mobile Number</label>
+                        <input type="tel" id="regPhone" class="form-control" placeholder="9876543210" required>
+                    </div>
+                </div>
+
+                <div class="form-grid-2">
+                    <div class="form-group">
+                        <label for="regDept">Department</label>
+                        <select id="regDept" class="form-control" required>
+                            <option value="">Choose department...</option>
+                            <option value="IT">Information Technology</option>
+                            <option value="CE">Computer Engineering</option>
+                            <option value="CSE">Computer Science</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="regSemester">Semester</label>
+                        <select id="regSemester" class="form-control" required>
+                            <option value="3">Semester 3 (Odd 2026-27)</option>
+                            <option value="4">Semester 4</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-grid-2">
+                    <div class="form-group">
+                        <label for="regPass">Password</label>
+                        <input type="password" id="regPass" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="regPassConfirm">Confirm Password</label>
+                        <input type="password" id="regPassConfirm" class="form-control" required>
+                    </div>
+                </div>
+
+                <div style="margin-top: 1.5rem;">
+                    <button type="submit" class="btn btn-primary btn-block" style="padding: 0.85rem;">Submit Student Registration</button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-bottom">
+            <p>&copy; 2026 CHARUSAT FTE - Responsive Form Practical 3</p>
+        </div>
+    </footer>
+</body>
+</html>

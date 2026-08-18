@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Responsive Dashboard - CSS Grid Sidebar and Viewports">
+    <title>StudentHub - Responsive Dashboard (CSS Grid)</title>
+    <link rel="stylesheet" href="css/responsive.css">
+    <style>
+        .sidebar-menu {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .sidebar-menu a {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            padding: 0.75rem 1rem;
+            color: var(--text-primary);
+            text-decoration: none;
+            border-radius: var(--radius-sm);
+            font-weight: 500;
+            transition: all var(--transition-fast);
+        }
+        .sidebar-menu a:hover, .sidebar-menu a.active {
+            background: var(--primary-light);
+            color: var(--primary);
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="nav-container">
+            <a href="index.html" class="brand-logo">🎓 StudentHub</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="dashboard.html" class="active">Dashboard</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="nav-auth">
+                <a href="index.html" class="btn btn-outline" style="border-color: #ef4444; color: #ef4444;">Logout</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="breadcrumb-trail">
+            <a href="index.html">Home</a> <span>›</span> <strong>Responsive Dashboard</strong>
+        </div>
+
+        <!-- 2D CSS Grid: Sidebar + Main Content -->
+        <div class="dashboard-grid">
+            <!-- Sidebar -->
+            <aside class="card" style="padding: 1.25rem;">
+                <div style="text-align: center; margin-bottom: 1.25rem;">
+                    <div style="width: 60px; height: 60px; border-radius: 50%; background: #dbeafe; color: var(--primary); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; font-weight: bold; margin: 0 auto 0.5rem;">SP</div>
+                    <h3 style="font-size: 1.1rem;">Satyajit Parmar</h3>
+                    <p style="font-size: 0.8rem; color: var(--text-secondary);">23IT042 | B.Tech IT</p>
+                </div>
+                <hr style="border: 0; border-top: 1px solid var(--border-color); margin-bottom: 1rem;">
+                <ul class="sidebar-menu">
+                    <li><a href="dashboard.html" class="active">📊 Overview</a></li>
+                    <li><a href="events.html">📅 My Events</a></li>
+                    <li><a href="about.html">👤 Academic Record</a></li>
+                    <li><a href="contact.html">⚙️ Settings</a></li>
+                </ul>
+            </aside>
+
+            <!-- Main Dashboard Area -->
+            <div>
+                <!-- Responsive Metrics Stats Grid -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-label">Enrolled Events</span>
+                        <span class="stat-value">3 Active</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">Certificates</span>
+                        <span class="stat-value" style="color: var(--success);">2 Issued</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-label">Attendance</span>
+                        <span class="stat-value" style="color: var(--accent);">98.4%</span>
+                    </div>
+                </div>
+
+                <!-- Event Table Card -->
+                <section class="card">
+                    <h2 style="margin-bottom: 1rem;">Recent Registrations (Odd Sem 2026-27)</h2>
+                    <div style="overflow-x: auto;">
+                        <table style="width: 100%; border-collapse: collapse; min-width: 500px; font-size: 0.95rem;">
+                            <thead>
+                                <tr style="border-bottom: 2px solid var(--border-color); text-align: left; background: #f8fafc;">
+                                    <th style="padding: 10px;">Event Title</th>
+                                    <th style="padding: 10px;">Date</th>
+                                    <th style="padding: 10px;">Venue</th>
+                                    <th style="padding: 10px;">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="border-bottom: 1px solid var(--border-color);">
+                                    <td style="padding: 12px 10px; font-weight: 600;">Charusat HackFest 2026</td>
+                                    <td style="padding: 12px 10px;">Nov 14, 2026</td>
+                                    <td style="padding: 12px 10px;">CSPIT Lab 3</td>
+                                    <td style="padding: 12px 10px;"><span style="background: #dcfce7; color: #15803d; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: 600;">Confirmed</span></td>
+                                </tr>
+                                <tr style="border-bottom: 1px solid var(--border-color);">
+                                    <td style="padding: 12px 10px; font-weight: 600;">Web Development BootCamp</td>
+                                    <td style="padding: 12px 10px;">Nov 20, 2026</td>
+                                    <td style="padding: 12px 10px;">Seminar Hall A</td>
+                                    <td style="padding: 12px 10px;"><span style="background: #dcfce7; color: #15803d; padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; font-weight: 600;">Confirmed</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-bottom">
+            <p>&copy; 2026 CHARUSAT FTE - Responsive Dashboard Practical 3</p>
+        </div>
+    </footer>
+</body>
+</html>

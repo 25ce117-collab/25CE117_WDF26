@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="StudentHub - Responsive UI Design with CSS Grid and Flexbox">
+    <title>StudentHub - Responsive Home (CSS Grid &amp; Flexbox)</title>
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="nav-container">
+            <a href="index.html" class="brand-logo">🎓 StudentHub</a>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                </ul>
+            </nav>
+            <div class="nav-auth">
+                <a href="register.html" class="btn btn-primary">Get Started</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <!-- Hero Section -->
+        <section class="hero-card">
+            <span style="background: rgba(37,99,235,0.25); color: #60a5fa; padding: 4px 12px; border-radius: 999px; font-size: 0.85rem; font-weight: 600;">CHARUSAT Student Ecosystem</span>
+            <h1>Unified Campus Experience with Responsive Design</h1>
+            <p>StudentHub seamlessly transitions across mobile smartphones, tablets, and ultra-wide desktops utilizing a pure CSS Grid and Flexbox responsive architecture.</p>
+            <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+                <a href="events.html" class="btn btn-primary">Browse Events</a>
+                <a href="dashboard.html" class="btn btn-outline" style="color: #fff; border-color: #475569;">View Dashboard</a>
+            </div>
+        </section>
+
+        <!-- Metric Counter Grid -->
+        <section class="stats-grid">
+            <div class="stat-card">
+                <span class="stat-label">Enrolled Students</span>
+                <span class="stat-value">1,420+</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-label">Active Events</span>
+                <span class="stat-value">24</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-label">Campus Clubs</span>
+                <span class="stat-value">18</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-label">Device Adaptability</span>
+                <span class="stat-value">100%</span>
+            </div>
+        </section>
+
+        <!-- 3-Column Responsive Grid Showcase -->
+        <section>
+            <h2>Campus Highlights (CSS Grid 1fr -> 2fr -> 3fr)</h2>
+            <div class="grid-cards">
+                <article class="card">
+                    <span style="color: var(--primary); font-weight: bold; font-size: 0.8rem; text-transform: uppercase;">Technical Hackathon</span>
+                    <h3 style="margin: 0.5rem 0;">Charusat HackFest 2026</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem;">Join over 150 student teams to develop groundbreaking open source software within 36 hours.</p>
+                    <div style="margin-top: 1rem;"><a href="events.html" class="btn btn-outline btn-block">Details &rarr;</a></div>
+                </article>
+
+                <article class="card">
+                    <span style="color: var(--success); font-weight: bold; font-size: 0.8rem; text-transform: uppercase;">Workshop Series</span>
+                    <h3 style="margin: 0.5rem 0;">Full-Stack Cloud Architectures</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem;">Hands-on masterclass focusing on containerization, serverless functions, and relational DB tuning.</p>
+                    <div style="margin-top: 1rem;"><a href="events.html" class="btn btn-outline btn-block">Details &rarr;</a></div>
+                </article>
+
+                <article class="card">
+                    <span style="color: var(--accent); font-weight: bold; font-size: 0.8rem; text-transform: uppercase;">Cultural Fiesta</span>
+                    <h3 style="margin: 0.5rem 0;">Spoural National Fest</h3>
+                    <p style="color: var(--text-secondary); font-size: 0.95rem;">Celebrate music, dance, theatrical arts, and photography across our 120-acre lush green campus.</p>
+                    <div style="margin-top: 1rem;"><a href="events.html" class="btn btn-outline btn-block">Details &rarr;</a></div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>StudentHub</h4>
+                <p>Designed with CSS Grid &amp; Flexbox for Web Development Frameworks (ITUE203).</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="events.html">Events</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="contact.html">Support Desk</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Use</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 CHARUSAT FTE - Responsive UI Practical 3</p>
+        </div>
+    </footer>
+</body>
+</html>
