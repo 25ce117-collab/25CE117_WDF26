@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DOM Manipulation, Event Handling, and UI Interactivity - StudentHub">
+    <title>StudentHub - DOM Manipulation &amp; UI Interactivity (Practical 4)</title>
+    <link rel="stylesheet" href="css/interactivity.css">
+</head>
+<body>
+    <!-- Top Navigation Header -->
+    <header class="site-header">
+        <div class="nav-container">
+            <a href="index.html" class="brand-logo">🎓 StudentHub</a>
+            
+            <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle navigation menu" aria-expanded="false">☰</button>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#slider-section">Slider</a></li>
+                <li><a href="#faq-section">Accordion</a></li>
+                <li><a href="#modal-section">Modal</a></li>
+                <li><a href="#toast-section">Toast Banner</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <!-- Component 6: Light/Dark Theme Switcher -->
+                <button class="theme-toggle-btn" id="themeToggleBtn">🌙 Dark Mode</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-wrapper">
+        <div style="margin-bottom: 2rem;">
+            <h1>JavaScript DOM Manipulation &amp; Interactivity</h1>
+            <p style="color: var(--text-secondary);">Interactive showcase implementing event listeners, class mutations, localStorage state persistence, and keyboard accessibility.</p>
+        </div>
+
+        <!-- COMPONENT 1: Content/Image Slider -->
+        <section id="slider-section" class="section-card">
+            <h2>1. Dynamic Content Carousel / Slider</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.25rem;">Featuring smooth transitions, Previous/Next navigation, dot indicators, and pause-on-hover autoplay.</p>
+            
+            <div class="slider-container">
+                <button class="slider-btn prev" id="sliderPrev" aria-label="Previous Slide">&lsaquo;</button>
+                <button class="slider-btn next" id="sliderNext" aria-label="Next Slide">&rsaquo;</button>
+
+                <div class="slider-slide active" style="background: linear-gradient(135deg, #1e3a8a, #0f172a);">
+                    <span style="color: #60a5fa; font-weight: bold; text-transform: uppercase;">Campus Event</span>
+                    <h2 style="font-size: 2rem; margin: 0.5rem 0;">Charusat HackFest 2026</h2>
+                    <p style="max-width: 600px; color: #cbd5e1;">Compete with the top developer teams in Gujarat across a 36-hour sprint. November 14, 2026.</p>
+                    <div style="margin-top: 1.5rem;"><button class="btn open-modal-trigger" data-title="Charusat HackFest 2026" data-details="Full registration opens Oct 30. Cash prize pool of Rs 1,00,000!">Inspect Event</button></div>
+                </div>
+
+                <div class="slider-slide" style="background: linear-gradient(135deg, #065f46, #022c22);">
+                    <span style="color: #34d399; font-weight: bold; text-transform: uppercase;">Technical Workshop</span>
+                    <h2 style="font-size: 2rem; margin: 0.5rem 0;">Web Frameworks &amp; REST APIs</h2>
+                    <p style="max-width: 600px; color: #cbd5e1;">Master PHP 8, PDO secure databases, and modern fetch architecture. Seminar Hall A.</p>
+                    <div style="margin-top: 1.5rem;"><button class="btn open-modal-trigger" data-title="Web Frameworks & REST APIs" data-details="Certified workshop conducted by Faculty of Technology & Engineering.">Inspect Event</button></div>
+                </div>
+
+                <div class="slider-slide" style="background: linear-gradient(135deg, #831843, #500724);">
+                    <span style="color: #f472b6; font-weight: bold; text-transform: uppercase;">Annual Cultural Fest</span>
+                    <h2 style="font-size: 2rem; margin: 0.5rem 0;">Spoural 2026 - Audition Call</h2>
+                    <p style="max-width: 600px; color: #cbd5e1;">Music, choreography, and dramatic performances at the University Open Amphitheatre.</p>
+                    <div style="margin-top: 1.5rem;"><button class="btn open-modal-trigger" data-title="Spoural 2026 Auditions" data-details="Open to all semesters. Stage auditions commence Dec 02.">Inspect Event</button></div>
+                </div>
+
+                <div class="slider-indicators">
+                    <button class="slider-dot active" aria-label="Slide 1"></button>
+                    <button class="slider-dot" aria-label="Slide 2"></button>
+                    <button class="slider-dot" aria-label="Slide 3"></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMPONENT 2: Collapsible FAQ Accordion -->
+        <section id="faq-section" class="section-card">
+            <h2>2. Collapsible FAQ Accordion</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 1.25rem;">Smooth height transition, animated expand icons, and ARIA state updates via JavaScript event delegation.</p>
+
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item active">
+                    <button class="accordion-header" aria-expanded="true">
+                        <span>How are UI preferences like Dark Theme stored across browser sessions?</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-body">
+                        <p>We leverage the <code>localStorage.setItem('studenthub_theme', theme)</code> Web API. Because <code>localStorage</code> provides persistent client-side key-value storage with no expiration, the selected mode is immediately re-applied on subsequent page loads without server latency.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" aria-expanded="false">
+                        <span>How does DOM event delegation improve performance?</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-body">
+                        <p>Instead of binding separate listeners to multiple child elements, a single event listener is attached to their common ancestor (e.g., <code>#faqAccordion</code>). Using <code>e.target.closest('.accordion-header')</code>, events bubbling up through the DOM are captured efficiently, conserving browser memory.</p>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <button class="accordion-header" aria-expanded="false">
+                        <span>How does the modal handle focus and keyboard closing?</span>
+                        <span class="accordion-icon">+</span>
+                    </button>
+                    <div class="accordion-body">
+                        <p>The modal listener monitors global <code>keydown</code> events. If the <code>Escape</code> key is triggered while the modal is active, the overlay is dismissed and scroll locking is restored immediately to preserve accessibility.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMPONENT 3 & 4: Modal Popup & Notification Toast Trigger -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem;">
+            <section id="modal-section" class="section-card">
+                <h2>3. Modal Dialog Popup</h2>
+                <p style="color: var(--text-secondary); margin-bottom: 1rem;">Accessible dialog with background blur, backdrop click dismissal, and ESC hotkey closing.</p>
+                <button class="btn open-modal-trigger" data-title="Demo Event Details" data-details="This modal is triggered dynamically using ES6 DOM manipulation.">Launch Modal Dialog</button>
+            </section>
+
+            <section id="toast-section" class="section-card">
+                <h2>4. Notification Banner / Toast</h2>
+                <p style="color: var(--text-secondary); margin-bottom: 1rem;">Non-blocking notifications with slide-in animation and 4-second auto-dismissal timer.</p>
+                <button class="btn btn-primary" id="triggerToastBtn">Dispatch Toast Notification</button>
+            </section>
+        </div>
+    </main>
+
+    <!-- Modal Popup Overlay Element -->
+    <div class="modal-overlay" id="eventModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle">Event Information</h3>
+                <button class="modal-close-btn close-modal-trigger" aria-label="Close dialog">&times;</button>
+            </div>
+            <div id="modalBody" style="margin-bottom: 1.5rem; line-height: 1.6;">
+                <p>Modal content text goes here.</p>
+            </div>
+            <div style="display: flex; justify-content: flex-end; gap: 0.75rem;">
+                <button class="btn close-modal-trigger" style="background: var(--border); color: var(--text-primary);">Close</button>
+                <button class="btn btn-primary close-modal-trigger" onclick="showToast('Action confirmed!', 'success');">Confirm Action</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/interactivity.js"></script>
+</body>
+</html>
