@@ -1,0 +1,194 @@
+/* Practical 5: Form Validation & Custom Canvas CAPTCHA Styles */
+
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --success: #16a34a;
+    --danger: #dc2626;
+    --warning: #f59e0b;
+    --bg-page: #f1f5f9;
+    --bg-card: #ffffff;
+    --text-primary: #0f172a;
+    --text-secondary: #64748b;
+    --border: #cbd5e1;
+    --radius: 8px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg-page);
+    color: var(--text-primary);
+    line-height: 1.6;
+    padding: 40px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.form-wrapper {
+    background: var(--bg-card);
+    border-radius: 14px;
+    padding: 35px 30px;
+    max-width: 680px;
+    width: 100%;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.03);
+    border: 1px solid var(--border);
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+.form-header h1 { font-size: 1.85rem; color: #1e293b; margin-bottom: 6px; }
+.form-header p { color: var(--text-secondary); font-size: 0.95rem; }
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+@media (min-width: 600px) {
+    .form-row { grid-template-columns: 1fr 1fr; }
+}
+
+.form-group {
+    margin-bottom: 18px;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--text-primary);
+}
+
+.input-control {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    font-size: 0.95rem;
+    background: #fff;
+    transition: all 0.2s ease;
+}
+
+.input-control:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+/* Valid & Invalid States */
+.input-control.is-valid {
+    border-color: var(--success);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%2316a34a'%3E%3Cpath d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 18px;
+}
+
+.input-control.is-invalid {
+    border-color: var(--danger);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23dc2626'%3E%3Cpath d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    background-size: 18px;
+}
+
+/* Inline Error Message */
+.error-feedback {
+    display: none;
+    color: var(--danger);
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-top: 4px;
+}
+.input-control.is-invalid ~ .error-feedback,
+.is-invalid-parent .error-feedback {
+    display: block;
+}
+
+/* Password Strength Meter */
+.strength-meter-container {
+    margin-top: 8px;
+}
+.strength-bar-bg {
+    width: 100%;
+    height: 6px;
+    background: #e2e8f0;
+    border-radius: 999px;
+    overflow: hidden;
+}
+.strength-bar-fill {
+    height: 100%;
+    width: 0%;
+    transition: width 0.3s, background-color 0.3s;
+}
+.strength-text {
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-top: 4px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Canvas CAPTCHA Component */
+.captcha-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+#captchaCanvas {
+    background: #e2e8f0;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    cursor: not-allowed;
+}
+.refresh-captcha-btn {
+    background: #f1f5f9;
+    border: 1px solid var(--border);
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.2s;
+}
+.refresh-captcha-btn:hover { background: #e2e8f0; }
+
+/* Radio & Checkbox Groups */
+.radio-group {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-top: 5px;
+}
+.radio-label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: normal;
+}
+
+.btn-submit {
+    width: 100%;
+    background: var(--primary);
+    color: #fff;
+    padding: 13px;
+    border: none;
+    border-radius: var(--radius);
+    font-size: 1.05rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background 0.2s;
+}
+.btn-submit:hover { background: var(--primary-dark); }
+.btn-submit:focus { outline: 3px solid #93c5fd; }

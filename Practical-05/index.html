@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Student Registration Form with Frontend Validation & Canvas CAPTCHA">
+    <title>StudentHub - Registration Validation &amp; CAPTCHA (Practical 5)</title>
+    <link rel="stylesheet" href="css/validation.css">
+</head>
+<body>
+    <div class="form-wrapper">
+        <header class="form-header">
+            <h1>Student Portal Registration</h1>
+            <p>Practical 5: Robust Frontend Regex Validation, Password Entropy &amp; Canvas CAPTCHA</p>
+        </header>
+
+        <form id="registrationForm" novalidate>
+            <!-- Full Name -->
+            <div class="form-group">
+                <label for="fullName">Full Name *</label>
+                <input type="text" id="fullName" class="input-control" placeholder="Letters only (min 3 chars)" autocomplete="name">
+                <div class="error-feedback" id="nameError">Please enter a valid full name (3-50 letters and spaces only).</div>
+            </div>
+
+            <!-- Email & Mobile -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="email">Institutional Email *</label>
+                    <input type="email" id="email" class="input-control" placeholder="name@domain.edu" autocomplete="email">
+                    <div class="error-feedback" id="emailError">Please enter a valid institutional email address.</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Mobile Number *</label>
+                    <input type="tel" id="phone" class="input-control" placeholder="10-digit mobile (starts with 6-9)" maxlength="10">
+                    <div class="error-feedback" id="phoneError">Must be a valid 10-digit Indian phone number (starting 6-9).</div>
+                </div>
+            </div>
+
+            <!-- Course / Department -->
+            <div class="form-group">
+                <label for="course">Degree / Department *</label>
+                <select id="course" class="input-control">
+                    <option value="">-- Choose Course --</option>
+                    <option value="BTECH_IT">B.Tech - Information Technology (CSPIT)</option>
+                    <option value="BTECH_CE">B.Tech - Computer Engineering (CSPIT)</option>
+                    <option value="BTECH_CSE">B.Tech - Computer Science &amp; Engineering (DEPSTAR)</option>
+                    <option value="MCA">Master of Computer Applications</option>
+                </select>
+                <div class="error-feedback" id="courseError">Please select your academic degree programme.</div>
+            </div>
+
+            <!-- Academic Year (Radio) & Gender (Radio) -->
+            <div class="form-row">
+                <div class="form-group">
+                    <label>Academic Year *</label>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="year" value="1"> 1st</label>
+                        <label class="radio-label"><input type="radio" name="year" value="2"> 2nd</label>
+                        <label class="radio-label"><input type="radio" name="year" value="3"> 3rd</label>
+                        <label class="radio-label"><input type="radio" name="year" value="4"> 4th</label>
+                    </div>
+                    <div class="error-feedback" id="yearError">Please select your current academic year.</div>
+                </div>
+
+                <div class="form-group">
+                    <label>Gender *</label>
+                    <div class="radio-group">
+                        <label class="radio-label"><input type="radio" name="gender" value="male"> Male</label>
+                        <label class="radio-label"><input type="radio" name="gender" value="female"> Female</label>
+                        <label class="radio-label"><input type="radio" name="gender" value="other"> Other</label>
+                    </div>
+                    <div class="error-feedback" id="genderError">Please indicate your gender.</div>
+                </div>
+            </div>
+
+            <!-- Password & Strength Meter -->
+            <div class="form-group">
+                <label for="password">Password *</label>
+                <input type="password" id="password" class="input-control" placeholder="Min 8 chars, Upper, Lower, Number, Symbol" autocomplete="new-password">
+                <div class="strength-meter-container">
+                    <div class="strength-bar-bg">
+                        <div class="strength-bar-fill" id="strengthFill"></div>
+                    </div>
+                    <div class="strength-text">
+                        <span>Strength:</span>
+                        <span id="strengthText">None</span>
+                    </div>
+                </div>
+                <div class="error-feedback" id="passwordError">Password must be at least 8 characters with 1 uppercase, 1 lowercase, 1 digit, and 1 special symbol.</div>
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password *</label>
+                <input type="password" id="confirmPassword" class="input-control" placeholder="Repeat your password" autocomplete="new-password">
+                <div class="error-feedback" id="confirmError">Passwords do not match. Please verify.</div>
+            </div>
+
+            <!-- Custom Canvas CAPTCHA (Advanced Extension) -->
+            <div class="form-group">
+                <label>Security Verification (Canvas CAPTCHA) *</label>
+                <div class="captcha-container">
+                    <canvas id="captchaCanvas" width="180" height="45"></canvas>
+                    <button type="button" class="refresh-captcha-btn" id="refreshCaptchaBtn" title="Generate New CAPTCHA">🔄 Refresh</button>
+                </div>
+                <input type="text" id="captchaInput" class="input-control" placeholder="Type characters shown in box above" maxlength="6">
+                <div class="error-feedback" id="captchaError">CAPTCHA text does not match the image. Please try again.</div>
+            </div>
+
+            <!-- Terms Acceptance -->
+            <div class="form-group">
+                <label class="radio-label">
+                    <input type="checkbox" id="terms" name="terms">
+                    <span>I declare that all submitted information is accurate and agree to university guidelines.</span>
+                </label>
+                <div class="error-feedback" id="termsError">You must accept the terms before creating an account.</div>
+            </div>
+
+            <button type="submit" class="btn-submit">Submit Registration</button>
+        </form>
+    </div>
+
+    <script src="js/validation.js"></script>
+</body>
+</html>
