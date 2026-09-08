@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dynamic JSON Data Rendering with Fetch API, Search, Filter & Offline LocalStorage Cache">
+    <title>StudentHub - Dynamic JSON Fetch &amp; Search (Practical 6)</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Dynamic JSON Data Fetch &amp; Filtration</h1>
+            <p>Practical 6: Asynchronous Fetch API, Array Operations, Pagination, Dependent Dropdowns &amp; Offline Cache</p>
+        </header>
+
+        <!-- Status & Offline Cache Bar (Advanced Extension) -->
+        <div class="cache-status-bar">
+            <span id="cacheStatusText">Initializing Fetch API connection...</span>
+            <span class="badge-offline">LocalStorage Caching Active</span>
+        </div>
+
+        <!-- Navigation Tabs (Events, Students, FAQs) -->
+        <div class="tabs-container">
+            <button class="tab-btn active" data-tab="events">📅 Campus Events (16)</button>
+            <button class="tab-btn" data-tab="students">👥 Student Directory (16)</button>
+            <button class="tab-btn" data-tab="faqs">❓ FAQ Knowledge Base (16)</button>
+        </div>
+
+        <!-- Controls Bar: Search, Category Filter, Sort, Page Size -->
+        <div class="controls-card">
+            <div class="controls-grid">
+                <div>
+                    <label for="searchInput">🔍 Search Records</label>
+                    <input type="text" id="searchInput" placeholder="Type keyword to filter instantly...">
+                </div>
+
+                <div>
+                    <label for="categoryFilter">📁 Filter by Category</label>
+                    <select id="categoryFilter">
+                        <option value="ALL">All Categories</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="sortSelect">↕️ Sort Order</label>
+                    <select id="sortSelect">
+                        <option value="default">Default Order</option>
+                        <option value="name_asc">Title / Name (A to Z)</option>
+                        <option value="name_desc">Title / Name (Z to A)</option>
+                        <option value="date_asc">Date (Earliest First)</option>
+                        <option value="date_desc">Date (Latest First)</option>
+                        <option value="score_high">Capacity / GPA (Highest First)</option>
+                        <option value="score_low">Capacity / GPA (Lowest First)</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="pageSizeSelect">📄 Items Per Page</label>
+                    <select id="pageSizeSelect">
+                        <option value="6" selected>6 per page</option>
+                        <option value="9">9 per page</option>
+                        <option value="12">12 per page</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Dependent Dropdowns (Intermediate Extension) -->
+            <div class="dependent-dropdown-box">
+                <div>
+                    <label for="facultySelect">University Faculty (Dependent 1)</label>
+                    <select id="facultySelect">
+                        <option value="">-- Choose Faculty --</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="instituteSelect">Institute / School (Dependent 2)</label>
+                    <select id="instituteSelect" disabled>
+                        <option value="">-- Select Faculty First --</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="degreeSelect">Academic Degree (Dependent 3)</label>
+                    <select id="degreeSelect" disabled>
+                        <option value="">-- Select Institute First --</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <!-- Data Presentation Container -->
+        <div class="data-display" id="dataDisplay">
+            <!-- Populated dynamically by JavaScript -->
+        </div>
+
+        <!-- Pagination Controls -->
+        <div class="pagination-container">
+            <div id="pageInfoText" style="color:var(--text-secondary); font-size:0.9rem; font-weight:600;">Loading...</div>
+            <div class="pagination-btns" id="paginationControls"></div>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+[
+  { "id": 1, "roll": "23IT001", "name": "Aarav Sharma", "department": "IT", "semester": 3, "gpa": 9.42, "email": "23it001@charusat.edu.in", "city": "Ahmedabad", "status": "Active" },
+  { "id": 2, "roll": "23IT014", "name": "Diya Patel", "department": "IT", "semester": 3, "gpa": 8.85, "email": "23it014@charusat.edu.in", "city": "Vadodara", "status": "Active" },
+  { "id": 3, "roll": "23IT028", "name": "Kavya Joshi", "department": "IT", "semester": 3, "gpa": 9.10, "email": "23it028@charusat.edu.in", "city": "Surat", "status": "Active" },
+  { "id": 4, "roll": "23IT042", "name": "Satyajit Parmar", "department": "IT", "semester": 3, "gpa": 9.65, "email": "23it042@charusat.edu.in", "city": "Anand", "status": "Active" },
+  { "id": 5, "roll": "23IT055", "name": "Rohan Mehta", "department": "IT", "semester": 3, "gpa": 8.30, "email": "23it055@charusat.edu.in", "city": "Rajkot", "status": "Active" },
+  { "id": 6, "roll": "23CE005", "name": "Ananya Shah", "department": "CE", "semester": 3, "gpa": 9.50, "email": "23ce005@charusat.edu.in", "city": "Ahmedabad", "status": "Active" },
+  { "id": 7, "roll": "23CE022", "name": "Harsh Trivedi", "department": "CE", "semester": 3, "gpa": 8.75, "email": "23ce022@charusat.edu.in", "city": "Bhavnagar", "status": "Active" },
+  { "id": 8, "roll": "23CE039", "name": "Meera Bhatt", "department": "CE", "semester": 3, "gpa": 9.20, "email": "23ce039@charusat.edu.in", "city": "Vadodara", "status": "Active" },
+  { "id": 9, "roll": "23CE060", "name": "Neel Dave", "department": "CE", "semester": 3, "gpa": 7.95, "email": "23ce060@charusat.edu.in", "city": "Gandhinagar", "status": "Active" },
+  { "id": 10, "roll": "23CSE03", "name": "Pooja Varma", "department": "CSE", "semester": 3, "gpa": 9.80, "email": "23cse03@charusat.edu.in", "city": "Surat", "status": "Active" },
+  { "id": 11, "roll": "23CSE18", "name": "Rishi Desai", "department": "CSE", "semester": 3, "gpa": 8.90, "email": "23cse18@charusat.edu.in", "city": "Navsari", "status": "Active" },
+  { "id": 12, "roll": "23CSE35", "name": "Tanvi Solanki", "department": "CSE", "semester": 3, "gpa": 8.45, "email": "23cse35@charusat.edu.in", "city": "Anand", "status": "Active" },
+  { "id": 13, "roll": "23CSE50", "name": "Viren Rao", "department": "CSE", "semester": 3, "gpa": 9.05, "email": "23cse50@charusat.edu.in", "city": "Vadodara", "status": "Active" },
+  { "id": 14, "roll": "22IT012", "name": "Siddharth Jani", "department": "IT", "semester": 5, "gpa": 8.60, "email": "22it012@charusat.edu.in", "city": "Ahmedabad", "status": "Active" },
+  { "id": 15, "roll": "22CE045", "name": "Isha Prajapati", "department": "CE", "semester": 5, "gpa": 9.15, "email": "22ce045@charusat.edu.in", "city": "Nadiad", "status": "Active" },
+  { "id": 16, "roll": "22CSE29", "name": "Dhruv Barot", "department": "CSE", "semester": 5, "gpa": 8.25, "email": "22cse29@charusat.edu.in", "city": "Rajkot", "status": "Active" }
+]
