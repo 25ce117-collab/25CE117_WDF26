@@ -1,0 +1,29 @@
+[
+  {
+    "timestamp": "2026-09-15 10:25:00",
+    "fullName": "Satyajit Parmar",
+    "email": "23it042@charusat.edu.in",
+    "phone": "9876543210",
+    "department": "Information Technology",
+    "eventInterest": "HackFest 2026",
+    "notes": "Interested in cloud computing backend"
+  },
+  {
+    "timestamp": "2026-09-15 11:40:20",
+    "fullName": "Diya Patel",
+    "email": "23it014@charusat.edu.in",
+    "phone": "9823456789",
+    "department": "Information Technology",
+    "eventInterest": "Web Dev Bootcamp",
+    "notes": "Looking forward to PHP PDO sessions"
+  },
+  {
+    "timestamp": "2026-09-15 14:15:45",
+    "fullName": "Ananya Shah",
+    "email": "23ce005@charusat.edu.in",
+    "phone": "9712345678",
+    "department": "Computer Engineering",
+    "eventInterest": "Generative AI",
+    "notes": "Excited for neural architecture talks"
+  }
+]
