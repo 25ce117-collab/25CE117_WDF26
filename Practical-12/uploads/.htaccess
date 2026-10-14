@@ -1,0 +1,25 @@
+# Practical 12: Upload Directory Security Configuration
+# Prevent arbitrary script execution (Remote Code Execution - RCE) in the uploads directory
+
+# Disable PHP execution in uploads
+<IfModule mod_php.c>
+    php_flag engine off
+</IfModule>
+<IfModule mod_php7.c>
+    php_flag engine off
+</IfModule>
+<IfModule mod_php8.c>
+    php_flag engine off
+</IfModule>
+
+# Block access to any executable scripts
+<FilesMatch "\.(php|phtml|php3|php4|php5|php7|php8|phar|sh|pl|cgi|exe|py)$">
+    Order Deny,Allow
+    Deny from all
+</FilesMatch>
+
+# Only allow safe image file types
+<FilesMatch "\.(jpg|jpeg|png|gif|webp)$">
+    Order Allow,Deny
+    Allow from all
+</FilesMatch>
